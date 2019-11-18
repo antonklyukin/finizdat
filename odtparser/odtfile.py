@@ -14,8 +14,8 @@ class OdtFile:
 
     def get_content_data(self):
         self.content_file_bytes = self.odt_file_as_zip.read('content.xml')
-        return(self.content_file_bytes.decode('utf-8'))
+        return self.content_file_bytes.decode('utf-8')
 
     def get_styles_data(self):
         self.styles_file_bytes = self.odt_file_as_zip.read('styles.xml')
-        return(self.styles_file_bytes.decode('utf-8'))
+        return self.styles_file_bytes.decode('utf-8')

@@ -1,19 +1,144 @@
-journal_names_ru_list = ['Финансы и кредит',
+"""
+Модуль содержит неизменяемую информацию о журналах
+"""
+
+JOURNAL_ABBRVS = {"Финансы и кредит": "fc",
+                  "Экономический анализ: теория и практика": "ea",
+                  "Региональная экономика: теория и практика": "re",
+                  "Национальные интересы: приоритеты и безопасность": "ni",
+                  "Финансовая аналитика: проблемы и решения": "fa",
+                  "Международный бухгалтерский учет": "ia",
+                  "Дайджест-Финансы": "df",
+                  "Бухгалтерский учет в бюджетных и некоммерческих орган"
+                         "изациях": "bno"
+}
+
+JOURNAL_NAMES_RU_LIST = ['Финансы и кредит',
                          'Экономический анализ: теория и практика',
                          'Региональная экономика: теория и практика',
                          'Национальные интересы: приоритеты и безопасность',
                          'Финансовая аналитика: проблемы и решения',
                          'Международный бухгалтерский учет',
                          'Дайджест-Финансы',
-                         'Бухгалтерский учет в бюджетных и некоммерческих орган\
-изациях']
+                         'Бухгалтерский учет в бюджетных и некоммерческих орган'
+                         'изациях']
 
-journal_names_en_list = ['Finance and Credit',
+JOURNAL_NAMES_EN_LIST = ['Finance and Credit',
                          'Economic Analysis: Theory and Practice',
                          'Regional Economics: Theory and Practice',
                          'National Interests: Priorities and Security',
                          'Financial Analytics: Science and Experience',
                          'International Accounting',
                          'Digest Finance',
-                         'Accounting in Budgetary and Non-Profit\
- Organizations']
+                         'Accounting in Budgetary and Non-Profit '
+                         'Organizations']
+                         
+MONTHS_RU_LIST = ["январь", "февраль", "март", "апрель", "май", "июнь",
+                  "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"]
+
+MONTHS_EN_LIST = ["january", "february", "march", "april", "may", "june",
+            "july", "august", "september", "october", "november", "december"]
+
+RUBRICS_DICT = {
+    "Теории финансов": "Theory of Finance",
+    "Финансовый капитал": "Financial Capital",
+    "Финансовая система": "Financial System",
+    "Финансовый контроль": "Financial Control",
+    "Бюджетно-налоговая система": "Fiscal System",
+    "Государственные заимствования": "Public Borrowing",
+    "Рынок ценных бумаг": "Securities Market",
+    "Инвестиционная деятельность": "Investing",
+    "Стоимость бизнеса": "Business Value",
+    "Мировая валютная система": "World Monetary System",
+    "Международные платежные механизмы": "International Payment Mechanisms",
+    "Валютно-кредитные отношения": "Monetary and Credit Relations",
+    "Проблемы глобализации": "Challenges of Globalization",
+    "Банковская деятельность": "Banking",
+    "Денежно-кредитное регулирование": "Monetary Accommodation",
+    "Страхование": "Insurance",
+    "Теория экономического анализа": "Theory of Economic Analysis",
+    "Анализ финансового капитала": "Analysis of Financial Capital",
+    "Анализ промышленного капитала": "Analysis of Industrial Capital",
+    "Анализ интеллектуального капитала": "Analysis of Intellectual Capital",
+    "Анализ человеческого капитала": "Analysis of Human Capital",
+    "Анализ социального и сетевого капитала": "Analysis of Social and Network Capital",
+    "Анализ природного капитала": "Analysis of Natural Capital",
+    "Экономическое развитие": "Economic Advancement",
+    "Комплексный экономико-социально-экологический анализ": "Integrated Economic-Socio-Ecological Analysis",
+    "Анализ доходов, прибыли и расходов": "Analysis of Income, Profits and Costs",
+    "Эффективность бизнеса": "Business Performance",
+    "Управленческий анализ": "Managerial Analysis",
+    "Инвестиционный анализ": "Investment Analysis",
+    "Оценка инвестиционных проектов": "Evaluation of Investment Projects",
+    "Антикризисное управление": "Crisis Management",
+    "Анализ конкурентоспособности": "Analysis of Competitive Ability",
+    "Финансовая устойчивость и платежеспособность": "Financial Stability and Solvency",
+    "Математические методы и модели": "Mathematical Methods and Models",
+    "Экономическая история": "Economic History",
+    "Теории региональной экономики": "Theory of Regional Economy",
+    "Пространственная экономика": "Spatial Economics",
+    "Регион в национальной экономике": "Region in National Economy",
+    "Региональное стратегическое планирование": "Regional Strategic Planning",
+    "Социально-экономическая политика": "Socioeconomic Policy",
+    "Устойчивое развитие регионов": "Sustainable Development of Regions",
+    "Экономическая безопасность": "Economic Security",
+    "Агропромышленный комплекс": "Agro-Industrial Complex",
+    "Инновации и инвестиции": "Innovation and Investment",
+    "Экономико-математическое моделирование": "Economic-Mathematical Modeling",
+    "Локальные рынки": "Local Markets",
+    "Народонаселение и демография": "Population and Demography",
+    "Экономика природопользования": "Environmental Economics",
+    "Экологическая безопасность": "Environmental Safety",
+    "Рекреация и туризм": "Recreation and Tourism",
+    "Маркетинг": "Marketing",
+    "Национальные интересы": "National Interests",
+    "Экономическая политика государства": "Economic Policy of the State",
+    "Приоритеты России": "Priorities of Russia",
+    "Угрозы и безопасность": "Threats and Security",
+    "Устойчивое развитие экономики": "Sustainable Development of Economy",
+    "Государственно-частное партнерство (ГЧП)": "Public-Private Partnership (PPP)",
+    "Международные экономические отношения": "International Economic Relations",
+    "Вопросы глобализации": "Globalization",
+    "Вызовы глобализации и их последствия": "Challenges of Globalization and Their Implications",
+    "Производственные отношения": "Productive Relations",
+    "Экология живых систем": "Ecology of Living Systems",
+    "Энергетическая безопасность": "Energy Security",
+    "Продовольственная безопасность": "Food Security",
+    "Математический анализ и моделирование в экономике": "Mathematical Analysis and Modeling in Economics",
+    "Экономико-статистические исследования": "Economic and Statistical Research",
+    "Мониторинг экономических процессов": "Monitoring of Economic Processes",
+    "Финансовые инструменты": "Financial Instruments",
+    "Риски, анализ и оценка": "Risk, Analysis and Evaluation",
+    "Потенциал домашних хозяйств": "Capacity of Households",
+    "Оценка и оценочная деятельность": "Assessment and Appraisal Activities",
+    "Мониторинг и прогнозирование банковских рисков": "Monitoring and Prediction of Banking Risks",
+    "Надежность финансовых институтов": "Reliability of Financial Institutions",
+    "Налоговое регулирование": "Tax Regulation",
+    "Экономическая политика": "Economic Policy",
+    "Теория бухгалтерского учета": "Theory of Accounting",
+    "Принципы бухгалтерского учета": "Principles of Accounting",
+    "Национальные стандарты учета и отчетности": "National Standards of Accounting and Reporting",
+    "Адаптация систем учета": "Accounting Systems Adapting",
+    "Международные стандарты учета и отчетности": "International Standards of Accounting and Reporting",
+    "Трансформация национальной отчетности": "Transformation of National Reporting",
+    "Управленческий учет": "Managerial Accounting",
+    "Финансовый учет": "Financial Accounting",
+    "Социальный и экологический учет": "Social and Environmental Accounting",
+    "Социальная корпоративная отчетность": "Tax and Taxation",
+    "Налоги и налогообложение": "Corporate Social Accountability",
+    "Учет затрат и калькулирование себестоимости": "Cost Accounting and Calculation of Value",
+    "Аудиторская деятельность": "Audit Activity",
+    "Регулирование и стандартизация отчетности": "Regulation and Standardization of Reporting",
+    "Информационные системы в бухгалтерском учете и аудите": "Information Systems in Accounting and Auditing",
+    "Страницы истории": "Chapter of History",
+    "Денежная система и денежное обращение": "Monetary System and Currency Circulation",
+    "Банковское дело": "Banking",
+    "Риски, анализ, оценка": "Risk, Analysis and Evaluation",
+    "Финансы организаций. Анализ систем учета": "Finance of Organizations. Analysis of Accounting Systems",
+    "Рейтинги и раскрытие информации": "Rating and Disclosure",
+    "Ценные бумаги и финансовые рынки": "Securities and Financial Markets"
+}
+
+
+
+
