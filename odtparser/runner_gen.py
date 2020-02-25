@@ -7,7 +7,7 @@ import json
 import pickle
 
 # Acronym of journal name (Example: 'FC')
-journal_acronym = "RE"
+journal_acronym = "EA"
 
 # Получаем полный путь до файла модуля
 module_filepath = os.path.realpath(__file__)
@@ -32,22 +32,23 @@ if __name__ == "__main__":
             file_list = element[2]
         break
 
+
     # Select files with interested filenames only (containing journal name
     # acronym)
     file_list = [f for f in file_list if journal_acronym in f]
 
     # all_journals_info_list = list(odt_info_generator(sorted(file_list)))
 
-    f = 'RE-2019-01.odt'
+    # f = 'RE-2019-01.odt'
 
     print(file_list)
 
-    if not os.path.isfile(f'{journal_acronym}_issues_dump.pkl'):
-        print(f'Serializing {f} issue file name')
-        print("Serializing empty issues_list")
+    # if not os.path.isfile(f'{journal_acronym}_issues_dump.pkl'):
+    #     print(f'Serializing {f} issue file name')
+    #     print("Serializing empty issues_list")
 
-        print(f'Getting info from {f}')
-        issue_info = get_issue_info(f)
+    #     print(f'Getting info from {f}')
+    #     issue_info = get_issue_info(f)
 
 
     

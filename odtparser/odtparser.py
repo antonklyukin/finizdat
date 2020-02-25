@@ -63,6 +63,8 @@ def clear_ref_element(element, content_data):
     Clears reference element from odt tags and adds HTML tags 
     """
 
+    # print(element)
+
     el_string = "<p>"
 
     for el in element:
@@ -701,7 +703,7 @@ class OdtParser:
             # Выбираем в параграфе список строк авторских данных: место
             # работы, e-mail, ORCID, SPIN - все авторы для одной статьи
             author_data_list = re.findall(
-                r"(?P<workplace>[0-9a-zA-Zа-яА-ЯёЁ\s,\(\)\.\«\»\-\;]+?)\b"
+                r"(?P<workplace>[0-9a-zA-Zа-яА-ЯёЁ\&\s,\(\)\.\«\»\-\;\']+?)\b"
                 r"(?P<email>[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~\-]+@[a-zA-Z0-9.\-]"
                 r"+\.[a-zA-Z]{2,})\b\s+\b(?P<orcid>https://orcid.org[/\dX\-]"
                 r"+|ORCID:\snot\savailable|ORCID:\sотсутствует)?\s"
@@ -796,7 +798,7 @@ class OdtParser:
             article_info_ru_regex = re.compile(
                 r"(.*)?Получена\s+(\d\d.\d\d.\d\d\d\d).*Получена.*?"
                 r"(\d\d.\d\d.\d\d\d\d).*Одобрена.*?(\d\d.\d\d.\d\d\d\d).*"
-                r"Доступна онлайн.*?(\d\d.\d\d.\d\d\d\d).*?УДК\s(.*)\s+JEL:\s+"
+                r"Доступна онлайн.*?(\d\d.\d\d.\d\d\d\d).*?УДК:?\s(.*)\s+JEL:\s+"
                 r"(.*)\s+Ключевые слова:\s+(.*)"
             )
 
@@ -809,6 +811,7 @@ class OdtParser:
 
             if article_info_lang == "ru":
                 res = article_info_ru_regex.findall(article_info_str)
+
                 if res != None:
                     article_info_dict = {
                         "reg_number": str.strip(res[0][0]),

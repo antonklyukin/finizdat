@@ -136,9 +136,8 @@ RUBRICS_DICT = {
     "Риски, анализ, оценка": "Risk, Analysis and Evaluation",
     "Финансы организаций. Анализ систем учета": "Finance of Organizations. Analysis of Accounting Systems",
     "Рейтинги и раскрытие информации": "Rating and Disclosure",
-    "Ценные бумаги и финансовые рынки": "Securities and Financial Markets"
+    "Ценные бумаги и финансовые рынки": "Securities and Financial Markets",
+    "Правовое регулирование в России и зарубежных странах": "Legal Regulation in Russia and Foreign Countries",
+    "Проблемы подготовки бухгалтеров": "Training of Accountants"
 }
-
-
-
 

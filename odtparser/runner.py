@@ -13,7 +13,7 @@ if __name__ == '__main__':
     module_dirpath = os.path.dirname(module_filepath)
 
     # Добавляем директорию и файл с тестовыми верстками
-    test_odt_filepath = os.path.join(module_dirpath, 'test_odt', 'ea.odt')
+    test_odt_filepath = os.path.join(module_dirpath, 'test_odt', 'IA-2019-12.odt')
     odt_parser = odt.OdtParser(test_odt_filepath)
 
     #Testing functions
@@ -36,12 +36,12 @@ if __name__ == '__main__':
     # print("Количество статей исходя из рубрик: ", len(article_rubrics))
 
     # article_abstracts = odt_parser.get_article_abstracts_list()
-    # print("Список аннотаций к статьям:\n", article_abstracts)
+    # # print("Список аннотаций к статьям:\n", article_abstracts)
     # print("Количество статей исходя из аннотаций: ", len(article_abstracts))
 
-    citation_paragraphs = odt_parser.get_citation_paragraphs_list()
-    print("Список разделов цитирования к статьям:\n", citation_paragraphs)
-    print("Количество статей исходя из разделов цитирования: ", len(citation_paragraphs))
+    # citation_paragraphs = odt_parser.get_citation_paragraphs_list()
+    # print("Список разделов цитирования к статьям:\n", citation_paragraphs)
+    # print("Количество статей исходя из разделов цитирования: ", len(citation_paragraphs))
 
     # article_full_texts = odt_parser.get_article_full_texts_list()
     # print("Список полных текстов статей:\n", article_full_texts[0])
@@ -59,8 +59,14 @@ if __name__ == '__main__':
     # print("Список выходной информации статей:\n", article_info_list)
     # print("Количество статей исходя из количества выходной информации статей: ", len(article_info_list))
 
-    # article_references_list = odt_parser.get_article_references_list()
-    # print("Список литературы статей:\n", article_references_list)
-    # print("Количество статей исходя из количества списков литературы статей: ", len(article_references_list))
+    article_references_list = odt_parser.get_article_references_list()
+    print("Список литературы статей:\n", article_references_list)
+    print("Количество статей исходя из количества списков литературы статей: ", len(article_references_list))
+
+
+    # TEST ROUTINE
+
+    for i, af in enumerate(article_references_list):
+        print(i, af, "\n")
 
 

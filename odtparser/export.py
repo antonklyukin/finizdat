@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+"""
+Exports data from one file in param. Example: python -m odtparser.export ./odtparser/test_odt/ia.odt 
+"""
+
 from odtparser.journals_info import MONTHS_EN_LIST, RUBRICS_DICT, JOURNAL_ABBRVS
 import odtparser.odtparser as odt
 import os
@@ -77,6 +81,10 @@ def get_issue_data(path_to_file):
     article_affiliation_info_list = odt_file.get_affiliation_info_list()
     article_info_list = odt_file.get_article_info_list()
     article_references_list = odt_file.get_article_references_list()
+
+    # TEST
+    # print(article_info_list)
+    # TEST
 
 
     # --- Gathering the information about journal issue ---
@@ -181,6 +189,8 @@ def get_issue_data(path_to_file):
                 "article_jel_en": article_info_list[i]["en"]["JEL"],
                 "article_keywords_ru": article_info_list[i]["ru"]["keywords_ru"],
                 "article_keywords_en": article_info_list[i]["en"]["keywords_en"],
+                "article_pages_range_ru": article_citiation_info_list[i]["ru"]["pages_range"],
+                "article_pages_range_en": article_citiation_info_list[i]["en"]["pages_range"],
 
                 "article_authors": authors_list,
 
@@ -288,6 +298,7 @@ if len(sys.argv) > 1:
     list_of_files = sys.argv[1:]
 
     for odt_file in list_of_files:
+        print(f"Получаем данные из файла {odt_file}")
         issue_data = get_issue_data(odt_file)
 
         journal_name = issue_data["issue_info"]["journal_name_ru"]
@@ -297,7 +308,6 @@ if len(sys.argv) > 1:
         issue_number = issue_data["issue_info"]["issue_number_ru"]
 
         journal_acronym = f"{journal_abbr}-{issue_year}-{issue_number}"
-
         write_issue_info_to_json(issue_data, journal_acronym)
 
 
