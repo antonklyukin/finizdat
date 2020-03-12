@@ -8,7 +8,7 @@ RUN groupadd --gid 1000 antony \
 WORKDIR /home/antony
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends libxml2 libxslt1.1 
+    && apt-get install -y --no-install-recommends libxml2 libxslt1.1
 
 RUN apt-get clean autoclean \
     && apt-get autoremove --yes \

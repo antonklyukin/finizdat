@@ -2,3 +2,6 @@ bs4
 lxml
 langdetect
 transliterate
+scrapy
+psycopg2-binary
+
